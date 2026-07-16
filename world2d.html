@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Carte 2D - Monde Infini</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+</head>
+<body>
+    <canvas id="world-canvas"></canvas>
+
+    <div class="ui-panel">
+        <h2>Visualisation 2D</h2>
+        <div class="info-group">
+            <span class="label">Seed actuelle :</span>
+            <span id="seed-display" class="value">-</span>
+        </div>
+        <div class="btn-group">
+            <button id="btn-to-3d" class="btn btn-accent">Voir en 3D 🏔️</button>
+            <a href="index.html" class="btn btn-secondary">Accueil</a>
+        </div>
+    </div>
+
+    <button class="settings-toggle-btn" id="settings-toggle">⚙️</button>
+
+    <div class="settings-panel" id="settings-panel">
+        <h3>⚙️ Paramètres</h3>
+
+        <h4>📍 Téléportation & Seed</h4>
+        <div class="settings-form">
+            <div class="input-row">
+                <input type="number" id="tele-x" placeholder="X">
+                <input type="number" id="tele-y" placeholder="Y">
+            </div>
+            <button id="btn-teleport" class="btn btn-primary btn-sm">Se téléporter</button>
+            
+            <input type="text" id="seed-changer" placeholder="Nouvelle Seed...">
+            <div class="input-row">
+                <button id="btn-apply-seed" class="btn btn-secondary btn-sm">Appliquer Seed</button>
+                <button id="btn-random-seed" class="btn btn-accent btn-sm">Random</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="coords-display" id="coords-display">X: 0, Y: 0</div>
+
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/noise.js"></script>
+    <script src="assets/js/world2d.js"></script>
+</body>
+</html>

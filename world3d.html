@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Carte 3D - Monde Infini</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div class="ui-panel">
+        <h2>Visualisation 3D</h2>
+        <div class="info-group">
+            <span class="label">Seed actuelle :</span>
+            <span id="seed-display" class="value">-</span>
+        </div>
+        <div class="btn-group">
+            <button id="btn-to-2d" class="btn btn-accent">Retour 2D 🗺️</button>
+            <a href="index.html" class="btn btn-secondary">Accueil</a>
+        </div>
+    </div>
+
+    <button class="settings-toggle-btn" id="settings-toggle">⚙️</button>
+
+    <div class="settings-panel" id="settings-panel">
+        <h3>⚙️ Paramètres</h3>
+        
+        <h4>📍 Téléportation & Seed</h4>
+        <div class="settings-form">
+            <div class="input-row3">
+                <input type="number" id="tele-x" placeholder="X">
+                <input type="number" id="tele-y" placeholder="Y">
+                <input type="number" id="tele-z" placeholder="Z">
+            </div>
+            <button id="btn-teleport" class="btn btn-primary btn-sm">Se téléporter</button>
+            
+            <input type="text" id="seed-changer" placeholder="Nouvelle Seed...">
+            <div class="input-row">
+                <button id="btn-apply-seed" class="btn btn-secondary btn-sm">Appliquer</button>
+                <button id="btn-random-seed" class="btn btn-accent btn-sm">Random</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="coords-display" id="coords-display">X: 0, Y: 0, Z: 0</div>
+
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/noise.js"></script>
+    <script src="assets/js/world3d.js"></script>
+</body>
+</html>

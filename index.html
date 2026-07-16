@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Générateur de Monde Procédural</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de Mondes Infinites</h1>
+        <p class="subtitle">Explorez des biomes réalistes en 2D et 3D</p>
+        
+        <div class="card">
+            <div class="form-group">
+                <label for="seed-input">Graine de génération (Seed) :</label>
+                <input type="text" id="seed-input" placeholder="Laissez vide pour une seed aléatoire...">
+            </div>
+            <button id="generate-btn" class="btn btn-primary">Créer le monde</button>
+        </div>
+    </div>
+
+    <script src="assets/js/router.js"></script>
+    <script>
+        document.getElementById('generate-btn').addEventListener('click', () => {
+            const seedInput = document.getElementById('seed-input').value.trim();
+            const seed = seedInput || Router.generateRandomSeed();
+            Router.navigateTo('world2d.html', seed);
+        });
+    </script>
+</body>
+</html>
